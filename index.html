@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>To-Do List</title>
+</head>
+<body>
+
+    <header class="header">
+
+    <div  class="header__menu">
+        <img src="./assets/img/menu (1).png" alt="burguer-menu.img" class="header__img">
+    </div>
+    <div class="header__profile">
+        <div class="header__profile-img"></div>
+    </div>
+
+    </header>
+
+    <main>
+
+        <section class="searchTask">
+            <div>
+                <h3 class="searchTask__greetings-Subtitle">Buen Dia!</h3>
+            </div>
+            <div>
+                <h1 class="searchTask__Task-counter">Tienes x Tareas pendientes hoy :)</h1>
+            </div>
+            <div class="searchTask__input-container">
+                <input type="text" placeholder="Busca una tarea..." class="searchTask__input">
+            </div>
+        </section>
+
+        <section class="List-Bar">
+            <div class="List-Bar__list-frame">
+                <div class="List-Bar__to-do-container">
+                    <img src="./assets/img/google-docs.png" alt="document to-do.img">
+                </div>
+                <div class="List-Bar__frame-subtitle">Por hacer</div>
+            </div>
+            <div class="List-Bar__list-frame">
+                <div class="List-Bar__progress-container">
+                    <img src="./assets/img/reloj-de-arena.png" alt="document to-do.img">
+                </div>
+                <div class="List-Bar__frame-subtitle">En Progreso</div>
+            </div>
+            <div class="List-Bar__list-frame">
+                <div class="List-Bar__done-container">
+                    <img src="./assets/img/documento.png" alt="document to-do.img">
+                </div>
+                <div class="List-Bar__frame-subtitle">Completado</div>
+            </div>
+        </section>
+
+        <section class="View-Task">
+            <div class="View-Task__views-subtitles">
+                <h2 class="View-Task__view-h2">Ultimas Tareas</h2>
+                <div class="View-Task__view-link">
+                <a href="#">ver todas</a >
+                </div>
+            </div>
+            <div class="View-Task__last-tasks">
+                <div class="View-Task__task-404">
+                    <img src="./assets/img/kisspng-web-development-http-404-world-wide-web-website-we-blue-cartoon-monster-5a9c0ec95d36a0.2789913515201768413818-removebg-preview.png" >
+                </div>
+                <div class="View-Task__add-task">
+                    <button class="View-Task__add-button">Añadir tarea <strong>+</strong></button>
+                </div>
+            </div>
+            <div class="View-Task__li-container">
+                <ul id="Cards-list" class = "View-Task__Cards-list"> 
+                </ul>
+                    <button class="View-Task__add-new" id="add-new">+</button>
+            </div>
+        </section>
+
+        <section class="Task-form">
+            <div class="Task-form__form-cont">
+
+                <form class="Task-form__form" id="form">
+
+                    <h2>Ingresa una nueva tarea</h2>
+
+                    <div class="Task-form__form-colors">
+                        <button class="Task-form__blue"  id = "opcion" type="button" data-respuesta="blue"></button>
+
+                        <button class="Task-form__yellow" id = "opcion" type="button" data-respuesta="yellow"></button>
+
+                        <button class="Task-form__green" type="button" id = "opcion" data-respuesta="green">
+
+                        </button>
+                        
+                    </div>
+
+                    <div class="Task-form__input-cont">
+                        <h3>Titulo</h3>
+                        <input type="text" placeholder="Añade un titulo..." class="Task-form__text-input" id="taskName">
+                    </div>
+                    <div class="Task-form__input-cont">
+                        <h3>Descripcion</h3>
+                        <input type="text" placeholder="Añade una descripcion..." class="Task-form__text-input" id="taskDesc">
+                    </div>
+                        <input type="submit" class="Task-form__submit-input" 
+                        id="btn-submit" value="Guardar" >
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="./src/events/submitTask.js""></script>
+    <script type = "module" src="./src/events/loadTask.js""></script>
+    <script  type = "module" src="./src/DOM/domPrinter.js""></script>
+</body>
+</html>
