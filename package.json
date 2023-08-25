@@ -4,7 +4,7 @@
   "description": "A to-do list",
   "main": "",
   "scripts": {
-    "start": "json-server --watch ./server/Server.json",
+    "start": "json-server --watch ./server/Server.json --port 2001 ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

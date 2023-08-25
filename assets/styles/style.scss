@@ -21,7 +21,7 @@ body{
 
     &__profile{
         height: 7vh;
-        width: 15vw;
+        width: 7vh;
         border-radius: 20px;
         border: 2px solid grey;
     }
@@ -64,7 +64,7 @@ main{
         margin-bottom:3%;
     }
     &__input-container input{
-        width: 90%;
+        width: 75vw;
         border-radius: 30px;
         border: none;
         background-color: #D9D9D9;
@@ -127,7 +127,6 @@ main{
     }
     img{
         display: flex;
-        width: 15vw;
         height: 7vh;
     }
     &__frame-subtitle{
@@ -171,7 +170,7 @@ main{
     }
     &__task-404 img{
         height: 30vh;
-        width: 55vw;
+        width: 30vh;
     }
     &__add-task{
         display: flex;
@@ -199,8 +198,42 @@ main{
         justify-content: flex-start;
     }
 
+    &__task-li.active{
+        display: flex;
+        justify-self: center;
+    }
+
     &__Cards-list{
         margin-left: -13%;
+    }
+
+
+    &__Manager{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 30%;
+        height: 19% ;
+        backdrop-filter: blur(10px); 
+        border-radius: 20px;
+        padding: 5%;
+        margin-left: 1%;
+    }
+    &__manager_btn{
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+        position: absolute;
+        width: 60%;
+        height: 20% ;
+        border-radius: 20px;
+        
+    }
+
+    &__manager_btn button{
+        font-size: 3vh;
+
     }
     ul,li{
         list-style: none;
@@ -210,9 +243,10 @@ main{
     }
 
     &__add-new{
-        border-radius: 100%;
-        width: 12vw;
-        height: 5vh;
+    
+        border-radius: 100px;
+        width: 50px;
+        height: 50px;
         background-color: #600bff;
         font-size: large;
         font-weight: bold;
@@ -223,29 +257,43 @@ main{
     }
 
     &__task-card{
-        background-color: #D9D9D9;
+        background-color: rgba(255, 0, 0, 0.733);
         width: 40vw;
-        height: 20vh ;
+        height: 25vw ;
         border-radius: 20px;
         margin-left: 3%;
         margin-bottom: 3%;
+        color: white;
+        padding: 3%;
     }
+
     &__task-card:hover{
     
-        background-color: #D9D9D9;
-        margin: 6%;
-        position:relative;
-        width: 50vw;
-        height: 20vh    ;
-        border-radius: 20px;
-    
+            background-color: show;
+            margin: 6%;
+            position:relative;
+            width: 37vw;
+            height: 37vw;
+            border-radius: 20px;
+        
+        }
+    &__task-title{
+        font-size: clamp(0.9rem, 18vw, 2rem);
+        margin-left: 5%;
     }
+    &__task-desc{
+        font-size: clamp(0.9rem, 4vw, 2rem);
+        font-weight: lighter;
+    }
+
+    
 }
 
 //Fourth Section
 
 .Task-form{
     display: flex;
+    transform: translateX(20%);
     position: fixed;
     padding: 2%;
     border: 2px solid grey;
@@ -255,7 +303,7 @@ main{
     background-color: white;
     margin-bottom: -100%;
 
-    @keyframes showForm {
+    @keyframes classForm {
         0%{
             transform: translateY(100%);
         }
@@ -266,8 +314,10 @@ main{
 
     &.Task-form.active{
     display: flex;
+    width: 72vw;
+    margin-left: -8%;
     position: relative;
-    animation :showForm .5s ease forwards;
+    animation :showForm .7s ease forwards;
     z-index: 3;
     background-color: white;
     }
@@ -282,7 +332,7 @@ main{
     &__yellow,
     &__green{
         height: 5vh;
-        width: 11vw;
+        width: 5vh;
         border-radius: 100px;
         justify-self: center;
     }
@@ -304,11 +354,14 @@ main{
     &__form{
         display: grid;
         justify-content: center;
+        padding: 3%;
     }
     &__input-cont{
         display: flex;
         flex-direction: column;
         height: fit-content;
+        margin-left: 10%;
+        width: 80%;
         margin-bottom: 10%;
     }
     h3{
@@ -338,5 +391,105 @@ main{
         color: white;
         font-weight: 700;
         font-size: clamp(.8rem, 1.7vh, 2rem);
+    }
+
+    &__date-input{
+        display:flex;
+        justify-items:center;
+        align-items:center;
+        width:100%;
+        height:9vh;
+        
+    }
+    &__date-input input{
+        border: none;
+        margin-left: 10%;
+    }
+}
+
+//to-do-html
+
+.main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    &__to-do-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 12vh;
+        height: 12vh;
+        border-radius: 100px;
+        background-color:#4b7de07e;
+        border: 1px solid #4b7CE0;
+        margin-top: -5%;
+    }
+
+    img{
+        display: flex;
+
+        height: 7vh;
+    }
+
+    &__Title h2{
+     margin-top: 0.5%;
+    }
+}
+
+// in Progress
+.main-in-progress{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+&__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12vh;
+    height: 12vh;
+    border-radius: 100px;
+    background-color:#f4c311b7;
+    border: 1px solid #9c7e11da;
+    margin-top: -5%;
+}
+
+img{
+    display: flex;
+    height: 8vh;
+}
+
+}
+
+.main-done{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    &__container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 12vh;
+        height: 12vh;
+        border-radius: 100px;
+        background-color:#2cff0bc4;
+        border: 1px solid #209c0dd8;
+        margin-top: -5%;
+    }
+    img{
+        display: flex;
+        height: 8vh;
+    }
+    
+}
+
+@media (min-width:534px) {
+    .View-Task{
+        &__Cards-list{
+            margin-left: 0;
+        }
     }
 }

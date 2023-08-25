@@ -9,6 +9,7 @@
 </head>
 <body>
 
+
     <header class="header">
 
     <div  class="header__menu">
@@ -37,19 +38,20 @@
         <section class="List-Bar">
             <div class="List-Bar__list-frame">
                 <div class="List-Bar__to-do-container">
-                    <img src="./assets/img/google-docs.png" alt="document to-do.img">
+                    <img src="./assets/img/google-docs.png" alt="document to-do.img" onclick="window.location.href=`./src/html/to-do.html`">
                 </div>
                 <div class="List-Bar__frame-subtitle">Por hacer</div>
             </div>
+            <a href="./src/html/done.html"></a>
             <div class="List-Bar__list-frame">
                 <div class="List-Bar__progress-container">
-                    <img src="./assets/img/reloj-de-arena.png" alt="document to-do.img">
+                    <img src="./assets/img/reloj-de-arena.png" alt="document to-do.img" onclick="window.location.href=`./src/html/inProgress.html`">
                 </div>
                 <div class="List-Bar__frame-subtitle">En Progreso</div>
             </div>
             <div class="List-Bar__list-frame">
                 <div class="List-Bar__done-container">
-                    <img src="./assets/img/documento.png" alt="document to-do.img">
+                    <img src="./assets/img/documento.png" alt="document to-do.img" onclick="window.location.href=`../src/html/done.html`">
                 </div>
                 <div class="List-Bar__frame-subtitle">Completado</div>
             </div>
@@ -73,7 +75,9 @@
             <div class="View-Task__li-container">
                 <ul id="Cards-list" class = "View-Task__Cards-list"> 
                 </ul>
-                    <button class="View-Task__add-new" id="add-new">+</button>
+
+                <button class="View-Task__add-new" id="add-new">+</button>
+
             </div>
         </section>
 
@@ -85,11 +89,11 @@
                     <h2>Ingresa una nueva tarea</h2>
 
                     <div class="Task-form__form-colors">
-                        <button class="Task-form__blue"  id = "opcion" type="button" data-respuesta="blue"></button>
+                        <button class="Task-form__blue"  id = "opcion-blue" type="button" data-respuesta="blue"></button>
 
-                        <button class="Task-form__yellow" id = "opcion" type="button" data-respuesta="yellow"></button>
+                        <button class="Task-form__yellow" id = "opcion-yellow" type="button" data-respuesta="yellow"></button>
 
-                        <button class="Task-form__green" type="button" id = "opcion" data-respuesta="green">
+                        <button class="Task-form__green" type="button" id = "opcion-green" data-respuesta="green">
 
                         </button>
                         
@@ -103,14 +107,25 @@
                         <h3>Descripcion</h3>
                         <input type="text" placeholder="Añade una descripcion..." class="Task-form__text-input" id="taskDesc">
                     </div>
+                    <div class="Task-form__date-input" id="date">
+                        <input type="datetime-local">
+                    </div>
                         <input type="submit" class="Task-form__submit-input" 
                         id="btn-submit" value="Guardar" >
                 </form>
             </div>
         </section>
     </main>
-    <script src="./src/events/submitTask.js""></script>
-    <script type = "module" src="./src/events/loadTask.js""></script>
+
+
+    
     <script  type = "module" src="./src/DOM/domPrinter.js""></script>
+    <script type="module" src="./src/DOM/formHandler.js"></script>
+
+
+<!--code icons-->
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
